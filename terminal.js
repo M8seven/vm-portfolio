@@ -1,4 +1,4 @@
-/* VMsolutions — interactive terminal (EN default · IT) */
+/* VMbridge — interactive terminal (EN default · IT) */
 (() => {
   const screen = document.getElementById('screen');
   const form   = document.getElementById('form');
@@ -44,7 +44,7 @@
  ██║   ██║██╔████╔██║
  ╚██╗ ██╔╝██║╚██╔╝██║
   ╚████╔╝ ██║ ╚═╝ ██║
-   ╚═══╝  ╚═╝     ╚═╝  solutions`;
+   ╚═══╝  ╚═╝     ╚═╝  bridge`;
 
   /* ---------- output helpers ---------- */
   const el = (cls, html) => { const d = document.createElement('div'); if (cls) d.className = cls; d.innerHTML = html; return d; };
@@ -57,7 +57,7 @@
   const T = {
     en: {
       about:
-`<span class="c-bright">VMsolutions</span> — security &amp; industrial automation
+`<span class="c-bright">VMbridge</span> — security &amp; industrial automation
 <span class="c-muted">// IT security · OT/industrial automation · ICS security</span>
 
 A studio pairing offensive security with hands-on industrial automation.
@@ -142,7 +142,7 @@ Advanced troubleshooting and on-site commissioning.
       careers:
 `<span class="c-muted"># we're hiring</span>
 
-VMsolutions is growing. We want people who are genuinely good at one
+VMbridge is growing. We want people who are genuinely good at one
 of these — and curious about the rest:
 
   · <span class="c-bright">security</span> / vulnerability research — Go, Python, C/C++
@@ -150,7 +150,7 @@ of these — and curious about the rest:
   · <span class="c-bright">industrial automation</span> — PLC, HMI/SCADA, OT
 
 Remote-friendly. Send what you've built or broken — code, CVEs,
-projects, anything real — to <a href="mailto:valentino.paulon88@gmail.com?subject=VMsolutions%20application">valentino.paulon88@gmail.com</a>`,
+projects, anything real — to <a href="mailto:valentino.paulon88@gmail.com?subject=VMbridge%20application">valentino.paulon88@gmail.com</a>`,
       method:
 `<span class="c-muted"># how we work</span>
 
@@ -171,7 +171,7 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
 <span class="c-muted">remote-first · security · automation · ICS/OT security</span>`,
       help:
 `<span class="c-muted">available commands</span>
-  <span class="c-amber2">about</span>      what VMsolutions is
+  <span class="c-amber2">about</span>      what VMbridge is
   <span class="c-amber2">team</span>       who we are
   <span class="c-amber2">valentino</span>  security &amp; software
   <span class="c-amber2">matteo</span>     industrial automation
@@ -182,7 +182,7 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
   <span class="c-amber2">lang</span>       switch language — <span class="c-muted">lang en | lang it</span>
   <span class="c-amber2">ls</span> / <span class="c-amber2">cat</span>   browse files · <span class="c-amber2">clear</span> clears the screen
 <span class="c-muted">tip: Tab completes · ↑/↓ history · or click a suggestion below</span>`,
-      intro:`<span class="c-bright">VMsolutions</span> · security &amp; industrial automation
+      intro:`<span class="c-bright">VMbridge</span> · security &amp; industrial automation
 <span class="c-muted">type</span> <span class="c-amber2">help</span> <span class="c-muted">or click a command below ·</span> <span class="c-amber2">lang it</span> <span class="c-muted">for Italian</span>`,
       nofile:f=>`<span class="c-rust">cat: ${escape(f)}: no such file</span> <span class="c-muted">(try ls)</span>`,
       nocat:`<span class="c-rust">cat: missing file — try</span> ls`,
@@ -191,7 +191,7 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
     },
     it: {
       about:
-`<span class="c-bright">VMsolutions</span> — sicurezza e automazione industriale
+`<span class="c-bright">VMbridge</span> — sicurezza e automazione industriale
 <span class="c-muted">// sicurezza IT · automazione OT/industriale · sicurezza ICS</span>
 
 Uno studio che unisce sicurezza offensiva e automazione industriale
@@ -276,7 +276,7 @@ Troubleshooting avanzato e messa in servizio sul campo.
       careers:
 `<span class="c-muted"># stiamo assumendo</span>
 
-VMsolutions cresce. Cerchiamo persone davvero brave in una di queste
+VMbridge cresce. Cerchiamo persone davvero brave in una di queste
 aree — e curiose verso le altre:
 
   · <span class="c-bright">sicurezza</span> / vulnerability research — Go, Python, C/C++
@@ -284,7 +284,7 @@ aree — e curiose verso le altre:
   · <span class="c-bright">automazione industriale</span> — PLC, HMI/SCADA, OT
 
 Da remoto. Mandaci cosa hai costruito o bucato — codice, CVE,
-progetti, roba concreta — a <a href="mailto:valentino.paulon88@gmail.com?subject=VMsolutions%20candidatura">valentino.paulon88@gmail.com</a>`,
+progetti, roba concreta — a <a href="mailto:valentino.paulon88@gmail.com?subject=VMbridge%20candidatura">valentino.paulon88@gmail.com</a>`,
       method:
 `<span class="c-muted"># come lavoriamo</span>
 
@@ -305,7 +305,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
 <span class="c-muted">da remoto · sicurezza · automazione · sicurezza ICS/OT</span>`,
       help:
 `<span class="c-muted">comandi disponibili</span>
-  <span class="c-amber2">about</span>      cos'è VMsolutions
+  <span class="c-amber2">about</span>      cos'è VMbridge
   <span class="c-amber2">team</span>       chi siamo
   <span class="c-amber2">valentino</span>  sicurezza e software
   <span class="c-amber2">matteo</span>     automazione industriale
@@ -316,7 +316,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   <span class="c-amber2">lang</span>       cambia lingua — <span class="c-muted">lang en | lang it</span>
   <span class="c-amber2">ls</span> / <span class="c-amber2">cat</span>   sfoglia i file · <span class="c-amber2">clear</span> pulisce lo schermo
 <span class="c-muted">suggerimento: Tab completa · ↑/↓ cronologia · o clicca un comando sotto</span>`,
-      intro:`<span class="c-bright">VMsolutions</span> · sicurezza e automazione industriale
+      intro:`<span class="c-bright">VMbridge</span> · sicurezza e automazione industriale
 <span class="c-muted">scrivi</span> <span class="c-amber2">help</span> <span class="c-muted">o clicca un comando qui sotto ·</span> <span class="c-amber2">lang en</span> <span class="c-muted">for English</span>`,
       nofile:f=>`<span class="c-rust">cat: ${escape(f)}: file inesistente</span> <span class="c-muted">(prova ls)</span>`,
       nocat:`<span class="c-rust">cat: manca il file — prova</span> ls`,
@@ -438,7 +438,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
 
   /* ---------- boot ---------- */
   const BOOT = [
-    ['vmsolutions — secure session','c-muted'],
+    ['vmbridge — secure session','c-muted'],
     ['[0.00] init','ok'],['[0.21] mod variant-analysis.ko','ok'],
     ['[0.39] link OT/IT bridge','ok'],['[0.60] arm cve-2026-11837 (symlink→chown)','armed'],
     ['[0.84] escalating privileges','root'],['[1.10] session ready','ok'],
