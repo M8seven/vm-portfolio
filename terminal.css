@@ -71,13 +71,11 @@ a:hover, .lnk:hover{ border-bottom-color:var(--acc2); text-shadow:0 0 12px rgba(
 .tag{ color:#0a0a0f; background:var(--acc); font-weight:600; padding:0 7px; border-radius:3px; font-size:12px }
 .tag.embargo{ background:var(--err) } .tag.doi{ background:var(--ok) }
 
-/* ascii banner — pulsing glow */
+/* ascii banner — solid indigo with pulsing glow */
 .banner{ line-height:1.05; font-weight:700; font-size:clamp(11px,2.4vw,17px);
-  margin:4px 0 14px; white-space:pre;
-  background:linear-gradient(120deg,var(--acc),var(--violet)); -webkit-background-clip:text;
-  background-clip:text; -webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 0 14px rgba(99,102,241,.35)); animation:pulse 3.2s ease-in-out infinite }
-@keyframes pulse{ 0%,100%{filter:drop-shadow(0 0 10px rgba(99,102,241,.25))} 50%{filter:drop-shadow(0 0 22px rgba(99,102,241,.5))} }
+  margin:4px 0 14px; white-space:pre; color:var(--acc);
+  text-shadow:0 0 16px rgba(99,102,241,.45); animation:pulse 3.2s ease-in-out infinite }
+@keyframes pulse{ 0%,100%{text-shadow:0 0 10px rgba(99,102,241,.3)} 50%{text-shadow:0 0 24px rgba(99,102,241,.65)} }
 
 /* key/value rows */
 .kv{ display:grid; grid-template-columns:140px 1fr; gap:2px 18px }
