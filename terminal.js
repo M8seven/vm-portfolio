@@ -24,12 +24,12 @@
     let last=0;
     (function frame(t){
       if (t-last > 55){ last=t;
-        g.fillStyle='rgba(10,10,15,.24)'; g.fillRect(0,0,w,h);
+        g.fillStyle='rgba(8,20,29,.24)'; g.fillRect(0,0,w,h);
         g.font='12px "IBM Plex Mono", monospace';
         for (let i=0;i<cols;i++){
           const ch = glyphs[(Math.random()*glyphs.length)|0];
           const py = drops[i]*G;
-          g.fillStyle = Math.random()>.95 ? 'rgba(199,201,214,.9)' : 'rgba(99,102,241,.6)';
+          g.fillStyle = Math.random()>.95 ? 'rgba(199,201,214,.9)' : 'rgba(47,166,184,.6)';
           g.fillText(ch, i*G, py);
           if (py>h && Math.random()>.975) drops[i]=0; else drops[i]+=0.5;
         }

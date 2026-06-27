@@ -1,14 +1,14 @@
 :root{
-  /* cold indigo/violet — reviewpulse family */
-  --bg:#0a0a0f; --panel:#0e0e16; --line:#1e1e2a;
-  --fg:#c7c9d6;            /* body text */
-  --bright:#eceef7;        /* bright output */
-  --acc:#6366f1;           /* indigo — prompt, signature */
-  --acc2:#a5b4fc;          /* light indigo — links, strings */
-  --violet:#a78bfa;        /* gradient companion */
+  /* teal/navy — VMsolutions logo palette */
+  --bg:#08141d; --panel:#0c1a26; --line:#1a2c3a;
+  --fg:#c4d2d8;            /* body text */
+  --bright:#e8f1f4;        /* bright output */
+  --acc:#2fa6b8;           /* teal — prompt, signature */
+  --acc2:#7dd3df;          /* turquoise — links, strings */
+  --violet:#2c6d8c;        /* navy-blue companion */
   --ok:#34d399;            /* success / paths */
   --err:#fb7185;           /* errors / alerts */
-  --muted:#6b6f85;         /* comments, meta */
+  --muted:#5e7785;         /* comments, meta */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -17,19 +17,19 @@ body{
   font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:15px; line-height:1.6; overflow:hidden; text-rendering:optimizeLegibility;
 }
-::selection{ background:rgba(99,102,241,.30); color:#fff }
+::selection{ background:rgba(47,166,184,.30); color:#fff }
 
 /* ---- ambient layers ---- */
 #amb{ position:fixed; inset:0; z-index:0; opacity:.30; pointer-events:none }
 .veil{ position:fixed; inset:0; z-index:1; pointer-events:none;
-  background:radial-gradient(120% 80% at 50% -10%, rgba(99,102,241,.10), transparent 55%),
+  background:radial-gradient(120% 80% at 50% -10%, rgba(47,166,184,.10), transparent 55%),
              radial-gradient(120% 90% at 50% 100%, rgba(0,0,0,.6), transparent 60%); }
 .scan{ position:fixed; inset:0; z-index:7; pointer-events:none; opacity:.4;
-  background:repeating-linear-gradient(to bottom, rgba(99,102,241,.025) 0 1px, transparent 1px 3px);
+  background:repeating-linear-gradient(to bottom, rgba(47,166,184,.025) 0 1px, transparent 1px 3px);
   animation:flick 5s steps(60) infinite }
 @keyframes flick{ 0%,100%{opacity:.4} 47%{opacity:.32} 51%{opacity:.46} }
 .sweep{ position:fixed; left:0; right:0; height:200px; z-index:6; pointer-events:none;
-  background:linear-gradient(to bottom, transparent, rgba(99,102,241,.12), transparent);
+  background:linear-gradient(to bottom, transparent, rgba(47,166,184,.12), transparent);
   animation:sweep 6s linear infinite }
 @keyframes sweep{ from{transform:translateY(-200px)} to{transform:translateY(100vh)} }
 
@@ -74,8 +74,8 @@ a:hover, .lnk:hover{ border-bottom-color:var(--acc2); text-shadow:0 0 12px rgba(
 /* ascii banner — solid indigo with pulsing glow */
 .banner{ line-height:1.05; font-weight:700; font-size:clamp(11px,2.4vw,17px);
   margin:4px 0 14px; white-space:pre; color:var(--acc);
-  text-shadow:0 0 16px rgba(99,102,241,.45); animation:pulse 3.2s ease-in-out infinite }
-@keyframes pulse{ 0%,100%{text-shadow:0 0 10px rgba(99,102,241,.3)} 50%{text-shadow:0 0 24px rgba(99,102,241,.65)} }
+  text-shadow:0 0 16px rgba(47,166,184,.45); animation:pulse 3.2s ease-in-out infinite }
+@keyframes pulse{ 0%,100%{text-shadow:0 0 10px rgba(47,166,184,.3)} 50%{text-shadow:0 0 24px rgba(47,166,184,.65)} }
 
 /* key/value rows */
 .kv{ display:grid; grid-template-columns:140px 1fr; gap:2px 18px }
@@ -88,7 +88,7 @@ a:hover, .lnk:hover{ border-bottom-color:var(--acc2); text-shadow:0 0 12px rgba(
   border:1px solid var(--line); border-radius:6px; padding:5px 11px; cursor:pointer; position:relative;
   transition:border-color .18s, color .18s, background .18s, box-shadow .18s, transform .12s; }
 .hints button:hover, .hints button:focus-visible{ border-color:var(--acc); color:var(--bright);
-  background:rgba(99,102,241,.08); box-shadow:0 0 18px rgba(99,102,241,.18); transform:translateY(-1px) }
+  background:rgba(47,166,184,.08); box-shadow:0 0 18px rgba(47,166,184,.18); transform:translateY(-1px) }
 .hints button .k{ color:var(--muted); margin-right:6px }
 
 /* prompt */
@@ -98,7 +98,7 @@ a:hover, .lnk:hover{ border-bottom-color:var(--acc2); text-shadow:0 0 12px rgba(
 #cmd{ flex:1; min-width:0; background:transparent; border:none; outline:none;
   color:var(--bright); font:inherit; caret-color:transparent; padding:2px 0; }
 .caret{ position:absolute; color:var(--acc); pointer-events:none; opacity:0;
-  text-shadow:0 0 10px rgba(99,102,241,.8); animation:blink 1.05s steps(1) infinite }
+  text-shadow:0 0 10px rgba(47,166,184,.8); animation:blink 1.05s steps(1) infinite }
 .caret.show{ opacity:1 }
 @keyframes blink{ 50%{opacity:0} }
 
