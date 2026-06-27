@@ -60,11 +60,11 @@
 `<span class="c-bright">VMsolutions</span> — security &amp; industrial automation
 <span class="c-muted">// IT security · OT/industrial automation · ICS security</span>
 
-A two-person studio pairing offensive security with hands-on industrial
-automation. We secure and build systems — from source code and cloud,
-down to PLCs and the plant floor.
+A studio pairing offensive security with hands-on industrial automation.
+We secure and build systems — from source code and cloud, down to the
+PLCs and the plant floor. And we're growing.
 
-<span class="c-muted">type</span> <span class="c-amber2">team</span> <span class="c-muted">to meet us ·</span> <span class="c-amber2">services</span> <span class="c-muted">for what we do</span>`,
+<span class="c-muted">type</span> <span class="c-amber2">team</span> <span class="c-muted">to meet us ·</span> <span class="c-amber2">services</span> <span class="c-muted">·</span> <span class="c-amber2">careers</span> <span class="c-muted">we're hiring</span>`,
       team:
 `<span class="c-muted"># the team</span>
 
@@ -72,7 +72,9 @@ down to PLCs and the plant floor.
    published CVEs, cloud-agent 0-days, full-stack &amp; AI · <span class="c-amber2">type valentino</span>
 
 <span class="tag">MM</span> <span class="c-bright">Matteo Munafò</span> — industrial automation
-   8y PLC/HMI/SCADA across railway, chemical, oil &amp; gas · <span class="c-amber2">type matteo</span>`,
+   8y PLC/HMI/SCADA across railway, chemical, oil &amp; gas · <span class="c-amber2">type matteo</span>
+
+<span class="c-muted">and growing —</span> <span class="c-amber2">type careers</span>`,
       valentino:
 `<span class="c-bright">Valentino Paulon</span> — security researcher &amp; engineer
 <span class="c-muted">// privilege escalation · cloud-agent security · source-level research</span>
@@ -137,6 +139,18 @@ Advanced troubleshooting and on-site commissioning.
   · PLC/SCADA hardening — where IT security meets the plant floor
 
 <span class="c-muted">remote-first · project-based ·</span> type <span class="c-amber2">contact</span>`,
+      careers:
+`<span class="c-muted"># we're hiring</span>
+
+VMsolutions is growing. We want people who are genuinely good at one
+of these — and curious about the rest:
+
+  · <span class="c-bright">security</span> / vulnerability research — Go, Python, C/C++
+  · <span class="c-bright">software</span> — full-stack &amp; AI engineering
+  · <span class="c-bright">industrial automation</span> — PLC, HMI/SCADA, OT
+
+Remote-friendly. Send what you've built or broken — code, CVEs,
+projects, anything real — to <a href="mailto:valentino.paulon88@gmail.com?subject=VMsolutions%20application">valentino.paulon88@gmail.com</a>`,
       method:
 `<span class="c-muted"># how we work</span>
 
@@ -158,11 +172,12 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
       help:
 `<span class="c-muted">available commands</span>
   <span class="c-amber2">about</span>      what VMsolutions is
-  <span class="c-amber2">team</span>       the two of us
+  <span class="c-amber2">team</span>       who we are
   <span class="c-amber2">valentino</span>  security &amp; software
   <span class="c-amber2">matteo</span>     industrial automation
   <span class="c-amber2">services</span>   what we do
   <span class="c-amber2">research</span>   published CVEs &amp; papers
+  <span class="c-amber2">careers</span>    we're hiring
   <span class="c-amber2">contact</span>    get in touch
   <span class="c-amber2">lang</span>       switch language — <span class="c-muted">lang en | lang it</span>
   <span class="c-amber2">ls</span> / <span class="c-amber2">cat</span>   browse files · <span class="c-amber2">clear</span> clears the screen
@@ -179,11 +194,11 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
 `<span class="c-bright">VMsolutions</span> — sicurezza e automazione industriale
 <span class="c-muted">// sicurezza IT · automazione OT/industriale · sicurezza ICS</span>
 
-Uno studio di due persone che unisce sicurezza offensiva e automazione
-industriale sul campo. Mettiamo in sicurezza e costruiamo sistemi —
-dal codice e dal cloud, fino ai PLC e all'impianto.
+Uno studio che unisce sicurezza offensiva e automazione industriale
+sul campo. Mettiamo in sicurezza e costruiamo sistemi — dal codice e
+dal cloud, fino ai PLC e all'impianto. E stiamo crescendo.
 
-<span class="c-muted">scrivi</span> <span class="c-amber2">team</span> <span class="c-muted">per conoscerci ·</span> <span class="c-amber2">services</span> <span class="c-muted">per cosa facciamo</span>`,
+<span class="c-muted">scrivi</span> <span class="c-amber2">team</span> <span class="c-muted">per conoscerci ·</span> <span class="c-amber2">services</span> <span class="c-muted">·</span> <span class="c-amber2">careers</span> <span class="c-muted">assumiamo</span>`,
       team:
 `<span class="c-muted"># il team</span>
 
@@ -191,7 +206,9 @@ dal codice e dal cloud, fino ai PLC e all'impianto.
    CVE pubbliche, 0-day cloud-agent, full-stack e AI · <span class="c-amber2">scrivi valentino</span>
 
 <span class="tag">MM</span> <span class="c-bright">Matteo Munafò</span> — automazione industriale
-   8 anni PLC/HMI/SCADA tra ferroviario, chimico, oil &amp; gas · <span class="c-amber2">scrivi matteo</span>`,
+   8 anni PLC/HMI/SCADA tra ferroviario, chimico, oil &amp; gas · <span class="c-amber2">scrivi matteo</span>
+
+<span class="c-muted">e stiamo crescendo —</span> <span class="c-amber2">scrivi careers</span>`,
       valentino:
 `<span class="c-bright">Valentino Paulon</span> — ricercatore di sicurezza e ingegnere
 <span class="c-muted">// privilege escalation · sicurezza cloud-agent · ricerca sul codice</span>
@@ -256,6 +273,18 @@ Troubleshooting avanzato e messa in servizio sul campo.
   · hardening PLC/SCADA — dove la sicurezza IT incontra l'impianto
 
 <span class="c-muted">da remoto · a progetto ·</span> scrivi <span class="c-amber2">contact</span>`,
+      careers:
+`<span class="c-muted"># stiamo assumendo</span>
+
+VMsolutions cresce. Cerchiamo persone davvero brave in una di queste
+aree — e curiose verso le altre:
+
+  · <span class="c-bright">sicurezza</span> / vulnerability research — Go, Python, C/C++
+  · <span class="c-bright">software</span> — sviluppo full-stack e AI
+  · <span class="c-bright">automazione industriale</span> — PLC, HMI/SCADA, OT
+
+Da remoto. Mandaci cosa hai costruito o bucato — codice, CVE,
+progetti, roba concreta — a <a href="mailto:valentino.paulon88@gmail.com?subject=VMsolutions%20candidatura">valentino.paulon88@gmail.com</a>`,
       method:
 `<span class="c-muted"># come lavoriamo</span>
 
@@ -277,11 +306,12 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
       help:
 `<span class="c-muted">comandi disponibili</span>
   <span class="c-amber2">about</span>      cos'è VMsolutions
-  <span class="c-amber2">team</span>       noi due
+  <span class="c-amber2">team</span>       chi siamo
   <span class="c-amber2">valentino</span>  sicurezza e software
   <span class="c-amber2">matteo</span>     automazione industriale
   <span class="c-amber2">services</span>   cosa facciamo
   <span class="c-amber2">research</span>   CVE e paper pubblicati
+  <span class="c-amber2">careers</span>    stiamo assumendo
   <span class="c-amber2">contact</span>    contatti
   <span class="c-amber2">lang</span>       cambia lingua — <span class="c-muted">lang en | lang it</span>
   <span class="c-amber2">ls</span> / <span class="c-amber2">cat</span>   sfoglia i file · <span class="c-amber2">clear</span> pulisce lo schermo
@@ -296,7 +326,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   };
   const t = k => T[lang][k];
 
-  const FILE_KEYS = { 'about.txt':'about','team.txt':'team','valentino.txt':'valentino','matteo.txt':'matteo','services.txt':'services','contact.txt':'contact','cve-2026-11837.md':'cve' };
+  const FILE_KEYS = { 'about.txt':'about','team.txt':'team','valentino.txt':'valentino','matteo.txt':'matteo','services.txt':'services','careers.txt':'careers','contact.txt':'contact','cve-2026-11837.md':'cve' };
 
   /* ---------- commands ---------- */
   const COMMANDS = {
@@ -308,6 +338,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
     research(){ block(t('research')); },
     cve(){ block(t('cve')); },
     services(){ block(t('services')); },
+    careers(){ block(t('careers')); }, jobs(){ block(t('careers')); }, hiring(){ block(t('careers')); }, join(){ block(t('careers')); },
     method(){ block(t('method')); },
     contact(){ block(t('contact')); },
     banner(){ out(`<pre class="banner">${BANNER}</pre>`); },
@@ -371,7 +402,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   input.addEventListener('blur',  () => caret.classList.remove('show'));
 
   /* ---------- suggested chips ---------- */
-  ['about','team','services','research','contact'].forEach(cmd => {
+  ['about','team','services','research','careers','contact'].forEach(cmd => {
     const b = document.createElement('button');
     b.innerHTML = `<span class="k">▸</span>${cmd}`;
     b.addEventListener('click', () => { input.focus(); typeAndRun(cmd); });
