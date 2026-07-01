@@ -12,30 +12,53 @@
 
   let lang = 'en';
 
-  /* ---------- ambient: faint indigo data-stream ---------- */
-  (function ambient(){
-    const cv = document.getElementById('amb'); if (!cv) return;
-    const g = cv.getContext('2d'); const G = 14;
-    let cols, drops, w, h;
-    const glyphs = '0123456789ABCDEF/<>{}#$x';
-    function size(){ w=cv.width=innerWidth; h=cv.height=innerHeight;
-      cols=Math.ceil(w/G); drops=Array.from({length:cols},()=>Math.random()*-60); }
-    size(); addEventListener('resize', size);
-    let last=0;
-    (function frame(t){
-      if (t-last > 55){ last=t;
-        g.fillStyle='rgba(8,20,29,.24)'; g.fillRect(0,0,w,h);
-        g.font='12px "IBM Plex Mono", monospace';
-        for (let i=0;i<cols;i++){
-          const ch = glyphs[(Math.random()*glyphs.length)|0];
-          const py = drops[i]*G;
-          g.fillStyle = Math.random()>.95 ? 'rgba(199,201,214,.9)' : 'rgba(47,166,184,.6)';
-          g.fillText(ch, i*G, py);
-          if (py>h && Math.random()>.975) drops[i]=0; else drops[i]+=0.5;
-        }
-      }
-      requestAnimationFrame(frame);
-    })(0);
+  /* ---------- plant strip — the OT side of the bridge ---------- */
+  const ot = (() => {
+    const $ = id => document.getElementById(id);
+    const strip=$('plant'), flowEl=$('flow'), lvlEl=$('lvl'), pctEl=$('lvlPct'),
+          valveEl=$('valve'), almEl=$('almTxt'), txEl=$('txCount'),
+          ledB=$('ledB'), linkEl=$('linkTxt');
+    let on=false, t=Math.random()*40, tx=0, almBusy=false;
+    function tick(){
+      if (!on) return;
+      t += 0.9;
+      const flow = 42.3 + Math.sin(t/6.5)*1.7 + (Math.random()-.5)*.6;
+      const lvl  = 66   + Math.sin(t/21)*6.5 + (Math.random()-.5)*.4;
+      flowEl.textContent = flow.toFixed(1);
+      pctEl.textContent  = lvl.toFixed(1)+'%';
+      lvlEl.style.width  = lvl+'%';
+      setTimeout(tick, 900);
+    }
+    function retrigger(el, cls){ el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+    return {
+      powerOn(){
+        if (on || !strip) return; on = true;
+        strip.classList.remove('off');
+        linkEl.textContent = 'LINK OK';
+        tick();
+      },
+      pulse(){
+        if (!on) return;
+        tx++; txEl.textContent = String(tx).padStart(4,'0');
+        retrigger(ledB, 'blip'); retrigger(strip, 'tx');
+      },
+      alarm(){
+        if (!on || almBusy) return; almBusy = true;
+        strip.classList.add('alarm');
+        almEl.textContent = 'ALM-071 UNAUTH WRITE PLC-01'; almEl.className = 'alm-warn';
+        valveEl.textContent = 'FAULT'; valveEl.className = 'alm-warn';
+        setTimeout(() => {
+          almEl.textContent = 'patched · disclosed'; almEl.className = 'alm-ok';
+          valveEl.textContent = 'OPEN'; valveEl.className = 'ok-t';
+          strip.classList.remove('alarm');
+          setTimeout(() => { almEl.textContent = 'none'; almEl.className = 'alm-none'; almBusy = false; }, 3200);
+        }, 3000);
+      },
+      spotlight(){
+        if (!strip) return;
+        strip.classList.add('hi'); setTimeout(() => strip.classList.remove('hi'), 1600);
+      },
+    };
   })();
 
   const BANNER =
@@ -160,6 +183,18 @@ on the plant floor.
 
 Findings ship with exact references, a realistic model, a working
 proof, and a concrete fix. <span class="c-olive">Verified before we report.</span>`,
+      plant:
+`<span class="c-muted"># live panel — PLC-01</span>
+
+┌ PLC-01 · S7-1500 (sim)
+│  P-07    pump     <span class="c-olive">RUN</span>      FT-101   flow
+│  V-12    valve    <span class="c-olive">OPEN</span>     LT-201   level
+│  MODE    <span class="c-bright">AUTO</span>              ALM      <span class="c-muted">none</span>
+└─
+
+The strip at the bottom is a live loop — the same logic we ship on
+real HMIs. <span class="c-bright">We build these panels (WinCC/TIA), and we test their
+security (ICS/OT).</span> <span class="c-muted">try</span> <span class="c-amber2">exploit</span> <span class="c-muted">and watch the panel react.</span>`,
       contact:
 `<span class="c-bright">Let's talk.</span>
 
@@ -176,6 +211,7 @@ proof, and a concrete fix. <span class="c-olive">Verified before we report.</spa
   <span class="c-amber2">valentino</span>  security &amp; software
   <span class="c-amber2">matteo</span>     industrial automation
   <span class="c-amber2">services</span>   what we do
+  <span class="c-amber2">plant</span>      live OT panel — we build &amp; break these
   <span class="c-amber2">research</span>   published CVEs &amp; papers
   <span class="c-amber2">careers</span>    we're hiring
   <span class="c-amber2">contact</span>    get in touch
@@ -294,6 +330,18 @@ nel sorgente a un guasto sull'impianto.
 
 Ogni finding arriva con riferimenti esatti, un modello realistico, un
 PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di segnalare.</span>`,
+      plant:
+`<span class="c-muted"># pannello live — PLC-01</span>
+
+┌ PLC-01 · S7-1500 (sim)
+│  P-07    pompa    <span class="c-olive">RUN</span>      FT-101   portata
+│  V-12    valvola  <span class="c-olive">OPEN</span>     LT-201   livello
+│  MODE    <span class="c-bright">AUTO</span>              ALM      <span class="c-muted">none</span>
+└─
+
+La barra in basso è un loop vivo — la stessa logica che mettiamo
+sugli HMI veri. <span class="c-bright">Questi pannelli li costruiamo (WinCC/TIA) e ne
+testiamo la sicurezza (ICS/OT).</span> <span class="c-muted">prova</span> <span class="c-amber2">exploit</span> <span class="c-muted">e guarda il pannello.</span>`,
       contact:
 `<span class="c-bright">Parliamone.</span>
 
@@ -310,6 +358,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   <span class="c-amber2">valentino</span>  sicurezza e software
   <span class="c-amber2">matteo</span>     automazione industriale
   <span class="c-amber2">services</span>   cosa facciamo
+  <span class="c-amber2">plant</span>      pannello OT live — li costruiamo e li testiamo
   <span class="c-amber2">research</span>   CVE e paper pubblicati
   <span class="c-amber2">careers</span>    stiamo assumendo
   <span class="c-amber2">contact</span>    contatti
@@ -339,6 +388,8 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
     cve(){ block(t('cve')); },
     services(){ block(t('services')); },
     careers(){ block(t('careers')); }, jobs(){ block(t('careers')); }, hiring(){ block(t('careers')); }, join(){ block(t('careers')); },
+    plant(){ block(t('plant')); ot.spotlight(); },
+    hmi(){ block(t('plant')); ot.spotlight(); }, scada(){ block(t('plant')); ot.spotlight(); },
     method(){ block(t('method')); },
     contact(){ block(t('contact')); },
     banner(){ out(`<pre class="banner">${BANNER}</pre>`); },
@@ -352,7 +403,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
       else out(`<span class="c-muted">lang:</span> <span class="c-olive">${lang}</span> <span class="c-muted">· usage: lang en | lang it</span>`); },
     id(){ out(`<span class="c-muted">uid=0(root) gid=0(root)</span> <span class="c-amber">— privilege escalation is the job</span>`); },
     sudo(){ out(`<span class="c-rust">guest is not in the sudoers file.</span> <span class="c-muted">This incident will be reported. ;)</span>`); },
-    exploit(){ block(
+    exploit(){ ot.alarm(); block(
 `<span class="c-muted">running exploit chain…</span>
   [*] enumerating symlinks            <span class="c-olive">ok</span>
   [*] racing chown(2)                 <span class="c-olive">ok</span>
@@ -371,6 +422,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
     const [name, ...args] = line.split(/\s+/);
     const fn = COMMANDS[name.toLowerCase()];
     if (fn) fn(args); else out(t('notfound')(name));
+    ot.pulse();
   }
 
   /* ---------- language ---------- */
@@ -402,7 +454,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   input.addEventListener('blur',  () => caret.classList.remove('show'));
 
   /* ---------- suggested chips ---------- */
-  ['about','team','services','research','careers','contact'].forEach(cmd => {
+  ['about','team','services','plant','research','careers','contact'].forEach(cmd => {
     const b = document.createElement('button');
     b.innerHTML = `<span class="k">▸</span>${cmd}`;
     b.addEventListener('click', () => { input.focus(); typeAndRun(cmd); });
@@ -440,7 +492,8 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
   const BOOT = [
     ['vmbridge — secure session','c-muted'],
     ['[0.00] init','ok'],['[0.21] mod variant-analysis.ko','ok'],
-    ['[0.39] link OT/IT bridge','ok'],['[0.60] arm cve-2026-11837 (symlink→chown)','armed'],
+    ['[0.39] link OT/IT bridge','ok'],['[0.52] PLC-01 heartbeat — plant online','ok'],
+    ['[0.60] arm cve-2026-11837 (symlink→chown)','armed'],
     ['[0.84] escalating privileges','root'],['[1.10] session ready','ok'],
   ];
   const STAT = { ok:'<span class="c-olive">ok</span>', armed:'<span class="c-amber2">armed</span>', root:'<span class="c-amber">root</span>' };
@@ -450,6 +503,7 @@ PoC funzionante e un fix concreto. <span class="c-olive">Verificato prima di seg
     screen.innerHTML='';
     out(`<pre class="banner">${BANNER}</pre>`);
     block(t('intro')); input.focus(); placeCaret();
+    ot.powerOn();
   }
   let booted=false;
   function boot(){ if (booted) return; booted=true;
